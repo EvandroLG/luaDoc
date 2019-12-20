@@ -2,8 +2,10 @@
 
 const { readFileAsync } = require('./lib/readFileAsync');
 const { parseFile } = require('./lib/parseFile');
+const { generatePage } = require('./lib/generatePage');
 
 (async () => {
   const fileContent = await readFileAsync(process.argv[2]);
-  console.log(parseFile(fileContent));
+  const data = parseFile(fileContent);
+  console.log(await generatePage(data));
 })();
