@@ -3,21 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title></title>
+    <title>{{object}}</title>
   </head>
   <body>
-    <div>
+    <div class="menu">
       <ul>
-        {{#each data}}
+        {{#each items}}
           <li>
             <a href="#{{method}}">
-              {{method}} 
+              {{../object}}.{{method}}
             </a>
           </li>
         {{/each}}
       </ul>
     </div>
-    <div>
-    </div>
+
+    <main>
+      {{#each items}}
+        <div id="{{method}}">
+          <h2>
+            <code>{{../object}}.{{method}}({{params}})</code>
+            <p>{{description}}</p>
+          </h2>
+        </div>
+      {{/each}}
+    </main>
   </body>
 </html>
