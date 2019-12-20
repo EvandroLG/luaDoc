@@ -3,16 +3,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title><%= title %></title>
+    <title></title>
   </head>
   <body>
     <div>
       <ul>
-        <% data.each do |item| %>
+        {{#each data}}
           <li>
-            <%= item.method %>
+            <a href="#{{method}}">
+              {{method}} 
+            </a>
           </li>
-        <% end %>
+        {{/each}}
       </ul>
     </div>
     <div>
