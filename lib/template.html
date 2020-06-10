@@ -4,29 +4,91 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>{{object}}</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+      }
+
+      h1, h2, p {
+        margin: 0;
+      }
+
+      code {
+        font-family: Consolas, Source Code Pro, Courier New;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      header {
+        position: fixed;
+        background: #FFF;
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 0 0.5rem #9da5ab;
+      }
+
+      .wrapper {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 4rem;
+      }
+
+      .menu {
+        overflow: scroll;
+        flex-basis: 15%;
+        box-shadow: 0 0 0.5rem #9da5ab;
+      }
+
+      .menu > ul > li {
+        padding-left: 1rem;
+        padding-bottom: 1rem;
+      }
+
+      main {
+        flex-basis: 85%;
+        padding-top: 3rem;
+        padding-left: 3rem;
+      }
+
+      main h2 {
+        margin-bottom: 1rem;
+      }
+
+      main > div {
+        margin-bottom: 2rem;
+      }
+    </style>
   </head>
   <body>
-    <div class="menu">
-      <ul>
-        {{#each items}}
-          <li>
-            <a href="#{{method}}">
-              {{../object}}.{{method}}
-            </a>
-          </li>
-        {{/each}}
-      </ul>
-    </div>
+    <header>
+      <h1>{{object}}</h1>
+    </header>
+    <div class="wrapper">
+      <div class="menu">
+        <ul>
+          {{#each items}}
+            <li>
+              <a href="#{{method}}">
+                {{../object}}.{{method}}
+              </a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
 
-    <main>
-      {{#each items}}
-        <div id="{{method}}">
-          <h2>
-            <code>{{../object}}.{{method}}({{params}}):{{return}}</code>
+      <main>
+        {{#each items}}
+          <div id="{{method}}">
+            <h2>
+              <code>{{../object}}.{{method}}({{params}}):{{return}}</code>
+            </h2>
             <p>{{description}}</p>
-          </h2>
-        </div>
-      {{/each}}
-    </main>
+          </div>
+        {{/each}}
+      </main>
+    </div>
   </body>
 </html>
