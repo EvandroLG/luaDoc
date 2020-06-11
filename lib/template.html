@@ -6,8 +6,10 @@
     <title>{{object}}</title>
     <style>
       body {
+        overflow: hidden;
         margin: 0;
         font-family: Helvetica, Arial, sans-serif;
+        color: #030303;
       }
 
       h1, h2, p {
@@ -37,9 +39,15 @@
       }
 
       .menu {
-        overflow: scroll;
+        overflow-y: auto;
         flex-basis: 15%;
         box-shadow: 0 0 0.5rem #9da5ab;
+        height: 100vh;
+      }
+
+      .menu > ul {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
       }
 
       .menu > ul > li {
@@ -49,8 +57,10 @@
 
       main {
         flex-basis: 85%;
-        padding-top: 3rem;
+        padding-top: 6rem;
         padding-left: 3rem;
+        overflow-y: auto;
+        height: 100vh;
       }
 
       main h2 {
