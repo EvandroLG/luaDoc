@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width">
     <title>{{object}}</title>
     <style>
+      :root {
+        --shadow: 0 0 0.5rem #9da5ab;
+      }
+
       body {
         overflow: hidden;
         margin: 0;
@@ -24,12 +28,17 @@
         padding: 0;
       }
 
+      a {
+        color: #606060;
+        text-decoration: none;
+      }
+
       header {
         position: fixed;
         background: #FFF;
         width: 100%;
         padding: 1rem;
-        box-shadow: 0 0 0.5rem #9da5ab;
+        box-shadow: var(--shadow);
       }
 
       .wrapper {
@@ -40,8 +49,8 @@
 
       .menu {
         overflow-y: auto;
-        flex-basis: 15%;
-        box-shadow: 0 0 0.5rem #9da5ab;
+        flex-basis: 20%;
+        box-shadow: var(--shadow);
         height: 100vh;
       }
 
@@ -56,7 +65,7 @@
       }
 
       main {
-        flex-basis: 85%;
+        flex-basis: 80%;
         padding-top: 6rem;
         padding-left: 3rem;
         overflow-y: auto;
