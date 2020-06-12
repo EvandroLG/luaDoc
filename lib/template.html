@@ -9,6 +9,10 @@
         --shadow: 0 0 0.5rem #9da5ab;
       }
 
+      * {
+        box-sizing: border-box;
+      }
+
       body {
         overflow: hidden;
         margin: 0;
@@ -27,6 +31,7 @@
 
       ul {
         padding: 0;
+        list-style: none;
       }
 
       a {
@@ -34,19 +39,9 @@
         text-decoration: none;
       }
 
-      header {
-        display: none;
-        width: 100vw;
-        flex-basis: 100%;
-        background: #FFF;
-        padding: 1rem;
-        box-shadow: var(--shadow);
-      }
-
       .wrapper {
         display: flex;
         justify-content: space-around;
-        padding-top: 4rem;
       }
 
       .menu {
@@ -54,21 +49,18 @@
         flex-basis: 20%;
         box-shadow: var(--shadow);
         height: 100vh;
-      }
-
-      .menu > ul {
-        padding-top: 2rem;
-        padding-bottom: 3rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
       }
 
       .menu > ul > li {
-        padding-left: 1rem;
         padding-bottom: 1rem;
       }
 
       main {
         flex-basis: 80%;
-        padding-top: 3rem;
+        padding-bottom: 2rem;
+        padding-top: 2rem;
         padding-left: 2rem;
         overflow-y: auto;
         height: 100vh;
@@ -85,10 +77,8 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <h1>{{object}}</h1>
-      </header>
       <div class="menu">
+        <h1>{{object}}</h1>
         <ul>
           {{#each items}}
             <li>

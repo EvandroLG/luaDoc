@@ -5,6 +5,6 @@ const { generatePage } = require("./lib/generatePage");
 
 (async () => {
   const filename = process.argv[2];
-  const data = await parseFile(filename);
+  const data = await parseFile(filename, true);
   console.log(await generatePage(data));
 })();
